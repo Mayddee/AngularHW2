@@ -1,0 +1,29 @@
+<div class="about-container">
+    <div class="profile-section">
+      <div class="profile-avatar">
+        <i class="fas fa-user"></i>
+      </div>
+      
+      <div class="profile-info">
+        <h1 class="name">{{ studentInfo.name }}</h1>
+        <p class="title">{{ studentInfo.title }}</p>
+        <p class="university">{{ studentInfo.university }} - {{ studentInfo.major }}</p>
+        <p class="bio">{{ studentInfo.bio }}</p>
+      </div>
+    </div>
+  
+    <div class="contacts-section">
+      <h2>Контакты</h2>
+      <div class="contacts-list">
+        <div *ngFor="let contact of studentInfo.contacts" 
+             class="contact-item" 
+             (click)="onContactClick(contact)">
+          <i class="fas {{ contact.icon }}"></i>
+          <div class="contact-details">
+            <span class="contact-label">{{ contact.label }}</span>
+            <span class="contact-value">{{ contact.value }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
